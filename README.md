@@ -1,6 +1,6 @@
 # Password-Locker
 
-##By Roy Chela
+## By Roy Chela
 
 ## Description
 Password Locker is an application that will help users manage their passwords and even generate new passwords.
