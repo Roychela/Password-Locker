@@ -16,4 +16,23 @@ class User:
         '''
 
         User.user_list.append(self)
-    
+class Credentials:
+    '''
+    Class that defines the credentials class behaviours.
+    '''
+    def confirm_login(self):
+
+        '''
+        Method for login functionality.
+        '''
+        self.new_user = User('Js','123abc')
+        self.new_user.save_user()
+        test_user = User('Test', 'User123')
+        test_user.save_user()
+        for user in User.user_list:
+            current_user = ''
+            if user.username == test_user.username and user.password == test_user.password:
+                current_user == user.username
+        return current_user
+        
+

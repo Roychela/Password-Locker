@@ -1,5 +1,6 @@
 import unittest
 from user_credentials import User
+from user_credentials import Credentials
 class TestUser(unittest.TestCase):
     def setUp(self):
         '''
@@ -33,6 +34,30 @@ class TestUser(unittest.TestCase):
         test_user = User('Test', 'User123')
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
+class TestCredentials(unittest.TestCase):
+    '''
+    Test class that defines test cases for the credentials class behaviours.
+
+    Args:
+        unittest.TestCase: TestCase class that helps in creating test cases
+    '''
+    def test_confirm_login(self):
+
+        '''
+        Method to test login functionality.
+        '''
+        self.new_user = User('Js','123abc')
+        self.new_user.save_user()
+        test_user = User('Test', 'User123')
+        test_user.save_user()
+        for user in User.user_list:
+            current_user = ''
+            if user.username == test_user.username and user.password == test_user.password:
+                current_user == user.username
+        return current_user
+        self.assertEqual(current_user, Credentials.confirm_login(test_user.username, test_user.password))
+
+
 
 
 if __name__ == "__main__":
