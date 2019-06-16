@@ -8,6 +8,9 @@ class TestUser(unittest.TestCase):
     def test__init__(self):
         self.assertEqual(self.new_user.username,"Js")
         self.assertEqual(self.new_user.password,"123abc")
+    def test_save_user(self):
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list), 1)
 
 
 if __name__ == "__main__":
