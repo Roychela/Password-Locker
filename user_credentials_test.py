@@ -1,4 +1,5 @@
 import unittest
+from user_credentials import User
 class TestUser(unittest.TestCase):
     def setUp(self):
         self.new_user = User('Js', "123abc")
