@@ -22,19 +22,17 @@ class Credentials:
     '''
     Class that defines the credentials class behaviours.
     '''
-    credentials_list =[]
+    credentials_list = []
     user_credentials_list = []
     @classmethod
     def confirm_login(cls, username, password):
-
         '''
         Method for login functionality.
         '''
         current_user = '' 
         for user in User.user_list:
-          
             if user.username == username and user.password == password:
-                current_user == user.username
+                current_user = user.username
         return current_user
         
     def __init__(self,user_name,site_name,account_name,password):

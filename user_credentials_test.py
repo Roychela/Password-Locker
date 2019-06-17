@@ -42,7 +42,7 @@ class TestCredentials(unittest.TestCase):
         user2.save_user()
         for user in User.user_list:
             if user.username == user2.username and user.password == user2.password:
-                current_user == user.username
+                current_user = user.username
         return current_user
         self.assertEqual(current_user, Credentials.confirm_login(user2.password, user2.username))
 
