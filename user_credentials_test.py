@@ -78,6 +78,13 @@ class TestCredentials(unittest.TestCase):
         instagram = Credentials('Mike','Instagram','mikay','123abc')
         instagram.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2) 
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Credential.credentials_list = []
+		
+
 
 
 
