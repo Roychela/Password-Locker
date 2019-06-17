@@ -34,4 +34,11 @@ class Credentials:
                 current_user == user.username
         return current_user
         
-
+    def __init__(self,user_name,site_name,account_name,password):
+        '''
+        Method to define the properties for each user object will hold.
+        '''
+        self.user_name = user_name
+        self.site_name = site_name
+        self.account_name = account_name
+        self.password = password

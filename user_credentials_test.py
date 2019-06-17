@@ -61,7 +61,15 @@ class TestCredentials(unittest.TestCase):
         '''
         Function to create an account's credentials before each test
         '''
-        self.new_credential = Credentials('Js','123abc')
+        self.new_credential = Credentials('Js','Instagram','@jst','123abc')
+    def test__init__(self):
+        '''
+        test__init__ test case to test if the object is initialized properly
+        '''
+        self.assertEqual(self.new_credential.user_name,'Js')
+        self.assertEqual(self.new_credential.site_name,'Instagram')
+        self.assertEqual(self.new_credential.account_name,'@jst')
+        self.assertEqual(self.new_credential.password,'123abc')
 
 
 
