@@ -8,10 +8,8 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user = User('Js', "123abc")
     def tearDown(self):
-        '''
-        tearDown method that does clean up after each test case has run.
-        '''
         User.user_list = []
+
     def test__init__(self):
         '''
         test__init__ test case to test if the object is initialized properly
@@ -82,8 +80,20 @@ class TestCredentials(unittest.TestCase):
         '''
         tearDown method that does clean up after each test case has run.
         '''
-        Credential.credentials_list = []
-		
+        Credentials.credentials_list = []
+        User.user_list = []
+        
+    def test_display_credentials(self):
+        '''
+        Test to check if credentials display method displays
+        '''
+        self.new_credential.save_credentials()
+        instagram = Credentials('Mike','Instagram','mikay','abc')
+        instagram.save_credentials()
+        facebook = Credentials('Mg','Facebook','mgr','123efg')
+        facebook.save_credentials()
+        self.assertEqual(len(Credentials.display_credentials(instagram.user_name)), 1)
+	 
 
 
 

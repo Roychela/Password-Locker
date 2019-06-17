@@ -49,3 +49,13 @@ class Credentials:
         Function to save a user credentials instance
         '''
         Credentials.credentials_list.append(self)
+    @classmethod
+    def display_credentials(cls,user_name):
+        '''
+        Function to display saved credentials
+        '''
+        user_credentials_list = []
+        for credential in cls.credentials_list:
+            if credential.user_name == user_name:
+                user_credentials_list.append(credential)
+        return user_credentials_list
