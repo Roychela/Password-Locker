@@ -130,6 +130,8 @@ def main():
                         chosen_site = input('Enter the site name for the credential password to copy: ')
                         copy_credential(chosen_site)
                         print('')
+                        print('Paste copied site_name password here:')
+                        copy = input()
                     else:
                         print('Incorrect entry.Try again.')
             else: 
