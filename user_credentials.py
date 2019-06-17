@@ -67,3 +67,11 @@ class Credentials:
         '''
         passwrd_generated=''.join(random.choice(char) for _ in range(size))
         return passwrd_generated
+    @classmethod
+    def find_by_site_name(cls, site_name):
+        '''
+        Function that finds a credential based on the site_name
+        '''
+        for credential in cls.credentials_list:
+            if credential.site_name == site_name:
+                return credential

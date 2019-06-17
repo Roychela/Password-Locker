@@ -94,6 +94,15 @@ class TestCredentials(unittest.TestCase):
         facebook.save_credentials()
         self.assertEqual(len(Credentials.display_credentials(instagram.user_name)), 1)
 	 
+    def test_find_by_site_name(self):
+        '''
+        Test method for finding a credential site_name
+        '''
+        self.new_credential.save_credentials()
+        instagram = Credentials('Mike','Instagram','mikay','abc')
+        instagram.save_credentials()
+        credential_exists = Credentials.find_by_site_name('Instagram')
+        self.assertEqual(credential_exists, Credentials.find_by_site_name('Instagram') )
 
 
 
