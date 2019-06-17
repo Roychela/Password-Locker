@@ -1,7 +1,6 @@
 import random
 import string
 import pyperclip 
-#global user_list
 class User:
     """
     Class that generates new instances of users.
@@ -32,7 +31,7 @@ class Credentials:
         Method for login functionality.
         '''
         current_user = '' 
-        for user in cls.user_list:
+        for user in User.user_list:
           
             if user.username == username and user.password == password:
                 current_user == user.username
