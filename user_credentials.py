@@ -1,4 +1,5 @@
-
+import random
+import string
 #global user_list
 class User:
     """
@@ -59,3 +60,10 @@ class Credentials:
             if credential.user_name == user_name:
                 user_credentials_list.append(credential)
         return user_credentials_list
+
+    def generate_password(size=8, char=string.ascii_lowercase+string.ascii_uppercase+string.digits):
+        '''
+        Function to generate random password
+        '''
+        passwrd_generated=''.join(random.choice(char) for _ in range(size))
+        return passwrd_generated

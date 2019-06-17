@@ -90,7 +90,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_credentials()
         instagram = Credentials('Mike','Instagram','mikay','abc')
         instagram.save_credentials()
-        facebook = Credentials('Mg','Facebook','mgr','123efg')
+        facebook = Credentials('Mg','Facebook','mikay','123efg')
         facebook.save_credentials()
         self.assertEqual(len(Credentials.display_credentials(instagram.user_name)), 1)
 	 
