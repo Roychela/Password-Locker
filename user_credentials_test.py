@@ -57,6 +57,11 @@ class TestCredentials(unittest.TestCase):
         return current_user
         self.assertEqual(current_user, Credentials.confirm_login(test_user.username, test_user.password))
 
+    def setUp(self):
+        '''
+        Function to create an account's credentials before each test
+        '''
+        self.new_credential = Credentials('Js','123abc')
 
 
 
