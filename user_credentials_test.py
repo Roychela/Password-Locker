@@ -70,6 +70,14 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credential.site_name,'Instagram')
         self.assertEqual(self.new_credential.account_name,'@jst')
         self.assertEqual(self.new_credential.password,'123abc')
+    def test_save_credentials(self):
+        '''
+        Test to confirm if the new credential is saved to the credentials list
+        '''
+        self.new_credential.save_credentials()
+        instagram = Credentials('Mike','Instagram','mikay','123abc')
+        instagram.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2) 
 
 
 

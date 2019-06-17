@@ -21,6 +21,8 @@ class Credentials:
     '''
     Class that defines the credentials class behaviours.
     '''
+    credentials_list =[]
+    user_credentials_list = []
     @classmethod
     def confirm_login(cls, username, password):
 
@@ -42,3 +44,8 @@ class Credentials:
         self.site_name = site_name
         self.account_name = account_name
         self.password = password
+    def save_credentials(self):
+        '''
+        Function to save a user credentials instance
+        '''
+        Credentials.credentials_list.append(self)
